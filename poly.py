@@ -16,9 +16,10 @@ class Bank:
         df = -df
         df1 = df[df['Вид расчета'] == 'наличный']    # строки, удовлетворяющие условию
         df2 = df[df['Вид расчета'] == 'безналичный']    # строки, не удовлетворяющие условию
+        print(f'100000 - (len({df1}) + len({df2})) строк удалено')
         df1.to_csv('df1.csv')
         df2.to_csv('df2.csv')
-        print(f'{100000 - (len({df1}) + len({df2}))} строк удалено')
+        
 
     def __del__():
         print('This xren has been deleted')
